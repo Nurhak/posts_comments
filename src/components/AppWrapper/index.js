@@ -1,13 +1,12 @@
 import React, {useEffect, useState} from "react";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import {Grid, IconButton, Toolbar, Typography} from "@material-ui/core";
+import {Grid, Toolbar, Typography} from "@material-ui/core";
 import {useDispatch, useSelector} from "react-redux";
 import Snackbar from "@material-ui/core/Snackbar";
 import {fetchError} from "../../redux/actions";
 import PageLoader from "../PageLoader";
 import AppBar from "@material-ui/core/AppBar";
-import MenuIcon from "@material-ui/icons/Menu";
 import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles(theme => ({
@@ -72,14 +71,6 @@ const AppWrapper = ({children}) => {
     <Box className={classes.root}>
       <AppBar position="static" className={classes.header}>
         <Toolbar variant="dense">
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon />
-          </IconButton>
           <Typography variant="h6" color="inherit">
             Posts and Comments
           </Typography>

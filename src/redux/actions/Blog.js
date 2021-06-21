@@ -1,5 +1,11 @@
 import {fetchError, fetchStart, fetchSuccess} from "./Common";
-import {SET_CURRENT_USER, SET_POSTS, SET_USERS} from "../constants/ActionTypes";
+import {
+  SET_COMMENTS,
+  SET_CURRENT_POST,
+  SET_CURRENT_USER,
+  SET_POSTS,
+  SET_USERS
+} from "../constants/ActionTypes";
 import axios from "../../services/config";
 
 export const getPosts = userId => {
@@ -17,6 +23,27 @@ export const getPosts = userId => {
       })
       .catch(error => {
         dispatch(fetchError("Something went wrong"));
+        console.error(error);
+      });
+  };
+};
+
+export const getComments = postId => {
+  return dispatch => {
+    dispatch(fetchStart());
+    axios
+      .get(`/comments?postId=${postId}`)
+      .then(response => {
+        if (response.status === 200) {
+          dispatch(fetchSuccess());
+          dispatch({type: SET_COMMENTS, payload: response.data});
+        } else {
+          dispatch(fetchError("Something went wrong"));
+        }
+      })
+      .catch(error => {
+        dispatch(fetchError("Something went wrong"));
+        console.error(error);
       });
   };
 };
@@ -36,6 +63,7 @@ export const getUsers = () => {
       })
       .catch(error => {
         dispatch(fetchError("Something went wrong"));
+        console.error(error);
       });
   };
 };
@@ -43,5 +71,11 @@ export const getUsers = () => {
 export const setUser = user => {
   return dispatch => {
     dispatch({type: SET_CURRENT_USER, payload: user});
+  };
+};
+
+export const setPost = post => {
+  return dispatch => {
+    dispatch({type: SET_CURRENT_POST, payload: post});
   };
 };

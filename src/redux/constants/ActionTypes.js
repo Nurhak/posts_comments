@@ -13,3 +13,4 @@ export const SET_POSTS = "set_posts";
 export const SET_USERS = "set_users";
 export const SET_COMMENTS = "set_comments";
 export const SET_CURRENT_USER = "set_current_user";
+export const SET_CURRENT_POST = "set_current_post";

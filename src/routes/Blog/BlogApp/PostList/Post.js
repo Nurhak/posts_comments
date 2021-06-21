@@ -1,22 +1,69 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {Grid} from "@material-ui/core";
+import {Card, CardContent} from "@material-ui/core";
+import makeStyles from "@material-ui/core/styles/makeStyles";
+import Typography from "@material-ui/core/Typography";
+import clsx from "clsx";
+import {useDispatch} from "react-redux";
+import {getComments, setPost} from "../../../../redux/actions/Blog.js";
+
+const useStyles = makeStyles({
+  root: {
+    minWidth: 275,
+    "&:hover, &.active": {
+      cursor: "pointer",
+      backgroundColor: "#3f51b5",
+      "& $title": {
+        color: "#fff",
+        fontSize: 15
+      },
+      "& .MuiTypography-body2": {
+        color: "#fff"
+      }
+    },
+    "& .MuiTypography-body2": {
+      fontWeight: 500
+    }
+  },
+  title: {
+    fontSize: 14
+  }
+});
 
 const Post = ({post, selectedPost}) => {
+  const classes = useStyles();
+  const dispatch = useDispatch();
+
   return (
-    <Grid container>
-      <Grid item xs={12}>
-        {post.title}
-      </Grid>
-      <Grid item xs={12}>
-        {post.body}
-      </Grid>
-    </Grid>
+    <Card
+      className={clsx(classes.root, {
+        active: post === selectedPost
+      })}
+      variant="outlined"
+      onClick={() => {
+        dispatch(setPost(post));
+        dispatch(getComments(post.id));
+      }}
+    >
+      <CardContent>
+        <Typography
+          className={classes.title}
+          color="textSecondary"
+          gutterBottom
+        >
+          {post.title}
+        </Typography>
+        <Typography variant="body2" component="p">
+          {post.body}
+        </Typography>
+      </CardContent>
+    </Card>
   );
 };
 
 export default Post;
 
 Post.prototype = {
-  post: PropTypes.object.isRequired
+  post: PropTypes.object.isRequired,
+  selectedPost: PropTypes.object.isRequired
 };

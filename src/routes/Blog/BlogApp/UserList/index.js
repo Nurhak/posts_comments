@@ -4,11 +4,11 @@ import PropTypes from "prop-types";
 import CmtList from "../../../../components/CmtList.js";
 import makeStyles from "@material-ui/core/styles/makeStyles.js";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   root: {
     position: "relative",
     width: "100%",
-    height: "100%",
+    height: "calc(100% - 65px)",
     overflowX: "hidden"
   }
 }));

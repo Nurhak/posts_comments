@@ -1,10 +1,17 @@
-import {SET_POSTS, SET_USERS, SET_CURRENT_USER} from "../constants/ActionTypes";
+import {
+  SET_POSTS,
+  SET_USERS,
+  SET_CURRENT_USER,
+  SET_CURRENT_POST,
+  SET_COMMENTS
+} from "../constants/ActionTypes";
 
 const INIT_STATE = {
   users: [],
   posts: [],
   selectedPost: {},
-  selectedUser: {}
+  selectedUser: {},
+  comments: []
 };
 
 // eslint-disable-next-line
@@ -26,6 +33,18 @@ export default (state = INIT_STATE, action) => {
       return {
         ...state,
         selectedUser: action.payload
+      };
+    }
+    case SET_CURRENT_POST: {
+      return {
+        ...state,
+        selectedPost: action.payload
+      };
+    }
+    case SET_COMMENTS: {
+      return {
+        ...state,
+        comments: action.payload
       };
     }
     default:
