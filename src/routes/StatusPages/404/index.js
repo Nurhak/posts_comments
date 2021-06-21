@@ -54,6 +54,10 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+/**
+ * Not found page.
+ * @returns {JSX.Element}
+ */
 const Error404 = () => {
   const classes = useStyles();
   const history = useHistory();

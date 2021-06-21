@@ -1,7 +1,6 @@
-import * as React from "react";
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
-import {getComments, getPosts, getUsers, setUser} from "redux/actions/Blog.js";
+import {getComments, getPosts, getUsers} from "redux/actions/Blog.js";
 import moxios from "moxios";
 import axios from "axios";
 

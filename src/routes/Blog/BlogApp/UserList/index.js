@@ -14,6 +14,13 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
+/**
+ * Lists the given users.
+ * @param users to be listed
+ * @param selectedUser to be tagged as active
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const UserList = ({users, selectedUser}) => {
   const classes = useStyles();
   if (!users.length) {

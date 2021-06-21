@@ -17,6 +17,13 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
+/**
+ * Renders UserList, PostList and PostDetail.
+ * Blog application states managed within this component.
+ * It is responsible for props drilling to the components.
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const BlogApp = () => {
   const dispatch = useDispatch();
   const {users, selectedUser, posts, selectedPost, comments} = useSelector(

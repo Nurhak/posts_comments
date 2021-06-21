@@ -30,6 +30,13 @@ const useStyles = makeStyles({
   }
 });
 
+/**
+ * Renders the custom post card.
+ * @param post to be rendered.
+ * @param selectedPost to be tagged as active.
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const Post = ({post, selectedPost}) => {
   const classes = useStyles();
   const dispatch = useDispatch();

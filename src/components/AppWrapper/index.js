@@ -40,6 +40,12 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+/**
+ * Main layout. Renders header and the given children.
+ * @param children to be rendered wihtin the layout.
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const AppWrapper = ({children}) => {
   const [ showLayoutLoader, setLayoutLoader ] = useState(true);
   const {error, loading, message} = useSelector(({common}) => common);

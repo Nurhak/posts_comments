@@ -1,11 +1,9 @@
 import {mount} from "enzyme";
-import UserList from "../UserList";
 import thunk from "redux-thunk";
 import configureMockStore from "redux-mock-store";
 import {Provider} from "react-redux";
 import React from "react";
 import PostList from "routes/Blog/BlogApp/PostList/index.js";
-import User from "routes/Blog/BlogApp/UserList/User.js";
 import Post from "routes/Blog/BlogApp/PostList/Post.js";
 
 const mockedPosts = [

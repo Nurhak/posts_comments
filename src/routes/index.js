@@ -4,6 +4,11 @@ import {useLocation} from "react-router-dom";
 import Error404 from "./StatusPages/404";
 import Blog from "./Blog";
 
+/**
+ * Handle the route request. Redirects root to blog.
+ * If route not found redirect to 404 page.
+ * @returns {JSX.Element}
+ */
 const Routes = () => {
   const location = useLocation();
 

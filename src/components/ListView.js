@@ -25,6 +25,17 @@ const getFooterContainer = ListFooterComponent => {
   return null;
 };
 
+/**
+ * List the given data.
+ * @param renderRow
+ * @param onEndReached
+ * @param data
+ * @param ListFooterComponent
+ * @param ListEmptyComponent
+ * @param rest
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const ListView = ({
   renderRow,
   onEndReached,

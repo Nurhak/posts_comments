@@ -1,7 +1,7 @@
 import React from "react";
-import {shallow, mount} from "enzyme";
+import {mount} from "enzyme";
 import BlogApp from "routes/Blog/BlogApp/index.js";
-import {Provider, useDispatch, useSelector} from "react-redux";
+import {Provider} from "react-redux";
 import thunk from "redux-thunk";
 import configureMockStore from "redux-mock-store";
 

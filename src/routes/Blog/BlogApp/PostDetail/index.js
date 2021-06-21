@@ -23,6 +23,13 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
+/**
+ * Renders the given post and comments belongs to that post.
+ * @param post to be listed.
+ * @param comments to be listed.
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const PostDetail = ({post, comments}) => {
   const classes = useStyles();
   if (post.title) {

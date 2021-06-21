@@ -20,6 +20,14 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
+/**
+ * Lists the given posts.
+ * @param posts to be listed.
+ * @param selectedPost to be tagged as active.
+ * @param selectedUser is used to check if user selected.
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const PostList = ({posts, selectedPost, selectedUser}) => {
   const classes = useStyles();
   if (!selectedUser.name) {

@@ -4,6 +4,12 @@ import PropTypes from "prop-types";
 
 import ListView from "./ListView";
 
+/**
+ * Main list controller.
+ * @param props
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const CmtList = ({...props}) => {
   return <ListView {...props} />;
 };
