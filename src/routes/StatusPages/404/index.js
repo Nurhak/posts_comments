@@ -72,7 +72,7 @@ const Error404 = () => {
           color="primary"
           onClick={() => history.push("/")}
         >
-          Anasayfa
+          Homepage
         </Button>
       </Box>
     </Box>

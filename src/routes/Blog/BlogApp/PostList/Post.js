@@ -36,6 +36,7 @@ const Post = ({post, selectedPost}) => {
 
   return (
     <Card
+      id="postCard"
       className={clsx(classes.root, {
         active: post === selectedPost
       })}
@@ -47,6 +48,7 @@ const Post = ({post, selectedPost}) => {
     >
       <CardContent>
         <Typography
+          id="postTitle"
           className={classes.title}
           color="textSecondary"
           gutterBottom

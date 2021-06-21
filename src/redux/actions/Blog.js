@@ -11,7 +11,7 @@ import axios from "../../services/config";
 export const getPosts = userId => {
   return dispatch => {
     dispatch(fetchStart());
-    axios
+    return axios
       .get(`/posts?userId=${userId}`)
       .then(response => {
         if (response.status === 200) {
@@ -31,7 +31,7 @@ export const getPosts = userId => {
 export const getComments = postId => {
   return dispatch => {
     dispatch(fetchStart());
-    axios
+    return axios
       .get(`/comments?postId=${postId}`)
       .then(response => {
         if (response.status === 200) {
@@ -51,7 +51,7 @@ export const getComments = postId => {
 export const getUsers = () => {
   return dispatch => {
     dispatch(fetchStart());
-    axios
+    return axios
       .get("/users")
       .then(response => {
         if (response.status === 200) {

@@ -40,8 +40,8 @@ const PostDetail = ({post, comments}) => {
           className={classes.seperator}
         />
         {comments.map(comment => (
-          <React.Fragment>
-            <Grid key={comment.id} item xs={12}>
+          <React.Fragment key={comment.id}>
+            <Grid item xs={12} id="commentCard">
               <Box>
                 <span className={classes.name}>{comment.name}</span> |{" "}
                 <span className={classes.email}>{comment.email}</span>

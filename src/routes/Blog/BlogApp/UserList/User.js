@@ -65,7 +65,6 @@ const HtmlTooltip = withStyles(theme => ({
 const User = ({user, selectedUser}) => {
   const classes = useStyles();
   const dispatch = useDispatch();
-  console.log(selectedUser === user);
   return (
     <HtmlTooltip
       title={
@@ -106,6 +105,7 @@ const User = ({user, selectedUser}) => {
           dispatch(setUser(user));
           dispatch(getPosts(user.id));
         }}
+        id="userCard"
       >
         <Box className={classes.chatAvatarRoot}>
           <Avatar
@@ -116,6 +116,7 @@ const User = ({user, selectedUser}) => {
         <Box className={classes.chatCellInfo}>
           <Box display="flex" alignItems="center">
             <Typography
+              id="userName"
               component="div"
               variant="subtitle2"
               className={classes.titleRoot}

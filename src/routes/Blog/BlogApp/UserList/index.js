@@ -3,6 +3,7 @@ import User from "./User";
 import PropTypes from "prop-types";
 import CmtList from "../../../../components/CmtList.js";
 import makeStyles from "@material-ui/core/styles/makeStyles.js";
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -15,6 +16,9 @@ const useStyles = makeStyles(() => ({
 
 const UserList = ({users, selectedUser}) => {
   const classes = useStyles();
+  if (!users.length) {
+    return <Box>There is no user.</Box>;
+  }
   return (
     <CmtList
       data={users}
