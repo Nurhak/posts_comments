@@ -8,7 +8,7 @@ In order to run the application:
 - Install node.js > 14.15.3
 - Install npm > 6.14.9
 - clone the repository
-- cd blog-ui
+- cd posts_comments
 - `npm install`
 
 ## Usage
